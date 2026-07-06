@@ -55,7 +55,10 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ── Keyframe Animations ── */
+/* ══════════════════════════════════════════
+   PREMIUM KEYFRAME ANIMATIONS
+   ══════════════════════════════════════════ */
+
 @keyframes pulse-glow {
   0%, 100% {
     box-shadow: 0 0 8px rgba(0, 230, 57, 0.3);
@@ -67,6 +70,92 @@ html {
 
 .animate-pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Gradient mesh background */
+@keyframes gradient-shift {
+  0%, 100% {
+    transform: translate(0%, 0%) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translate(10%, -15%) rotate(90deg) scale(1.1);
+  }
+  50% {
+    transform: translate(-5%, 10%) rotate(180deg) scale(0.95);
+  }
+  75% {
+    transform: translate(-10%, -5%) rotate(270deg) scale(1.05);
+  }
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Shimmer sweep for buttons */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Marquee scroll */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Counter glow pulse */
+@keyframes glow-breathe {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Subtle scale pulse */
+@keyframes scale-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Dot grid animation */
+@keyframes dot-pulse {
+  0%, 100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/* Border gradient rotate */
+@keyframes border-rotate {
+  0% {
+    --angle: 0deg;
+  }
+  100% {
+    --angle: 360deg;
+  }
 }
 
 /* ── Base Layer ── */
@@ -106,10 +195,27 @@ html {
 
 /* ── Components Layer ── */
 @layer components {
+  /* ── Buttons ── */
   .btn-primary {
     @apply bg-primary text-on-primary font-body-md text-body-md py-3 px-8 rounded-lg
            hover:shadow-lg transition-all duration-300 relative overflow-hidden
            active:scale-[0.98];
+  }
+
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    transform: translateX(-100%);
+    transition: none;
+  }
+
+  .btn-primary:hover::after {
+    animation: shimmer 0.6s ease-out forwards;
   }
 
   .dark .btn-primary {
@@ -137,11 +243,16 @@ html {
     color: #1c1b1b;
   }
 
+  /* ── Tech Tags ── */
   .tech-tag {
     @apply font-label-caps text-label-caps bg-surface-container py-1.5 px-3 rounded-md
            border border-outline-variant text-tertiary-container
            hover:border-secondary hover:text-secondary transition-all duration-200
            cursor-default select-none;
+  }
+
+  .tech-tag:hover {
+    transform: translateY(-1px);
   }
 
   .dark .tech-tag {
@@ -155,11 +266,13 @@ html {
     color: #00e639;
   }
 
+  /* ── Code Block ── */
   .code-block {
     @apply bg-[#0d0d0d] text-[#e0e0e0] font-code-sm text-code-sm p-6 rounded-lg overflow-x-auto
            border border-[#2a2a2a];
   }
 
+  /* ── Card ── */
   .card {
     @apply border border-outline-variant rounded-xl bg-surface
            transition-all duration-300 hover:shadow-md;
@@ -175,6 +288,60 @@ html {
     box-shadow: 0 8px 30px rgba(0,0,0,0.3);
   }
 
+  /* ── Glass Card (Premium) ── */
+  .glass-card {
+    @apply rounded-2xl border;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card:hover {
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .dark .glass-card {
+    background: rgba(20, 22, 23, 0.7);
+    border-color: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .dark .glass-card:hover {
+    background: rgba(20, 22, 23, 0.85);
+    border-color: rgba(0, 230, 57, 0.1);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 230, 57, 0.05);
+  }
+
+  /* ── Gradient Border Card ── */
+  .gradient-border-card {
+    position: relative;
+    @apply rounded-2xl;
+    background: transparent;
+  }
+
+  .gradient-border-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(0,230,57,0.3), rgba(89,121,255,0.3), rgba(139,92,246,0.3));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .gradient-border-card:hover::before {
+    opacity: 1;
+  }
+
+  /* ── Navigation Glass ── */
   .nav-glass {
     @apply bg-surface/80 backdrop-blur-[16px] border-b border-outline-variant
            shadow-[0_1px_3px_rgba(0,0,0,0.05)];
@@ -186,6 +353,7 @@ html {
     box-shadow: 0 1px 3px rgba(0,0,0,0.3);
   }
 
+  /* ── Glow Hover ── */
   .glow-hover:hover {
     box-shadow: 0 0 30px rgba(0, 230, 57, 0.1);
   }
@@ -194,11 +362,123 @@ html {
     box-shadow: 0 0 40px rgba(0, 230, 57, 0.15);
   }
 
+  /* ── Section Divider ── */
   .section-divider {
     @apply w-full h-px bg-gradient-to-r from-transparent via-outline-variant to-transparent;
   }
 
   .dark .section-divider {
     background: linear-gradient(to right, transparent, #2a2d2e, transparent);
+  }
+
+  /* ── Gradient Text ── */
+  .text-gradient {
+    background: linear-gradient(135deg, #00e639, #5979ff, #8B5CF6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-green {
+    background: linear-gradient(135deg, #00e639, #00c853);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── Marquee ── */
+  .marquee-track {
+    display: flex;
+    gap: 3rem;
+    animation: marquee 30s linear infinite;
+    width: max-content;
+  }
+
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  /* ── Animated Gradient Mesh Background ── */
+  .gradient-mesh {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .gradient-mesh .blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+    animation: gradient-shift 15s ease-in-out infinite;
+  }
+
+  .dark .gradient-mesh .blob {
+    opacity: 0.08;
+  }
+
+  .gradient-mesh .blob:nth-child(1) {
+    width: 500px;
+    height: 500px;
+    background: #00e639;
+    top: -10%;
+    right: -5%;
+    animation-delay: 0s;
+  }
+
+  .gradient-mesh .blob:nth-child(2) {
+    width: 400px;
+    height: 400px;
+    background: #5979ff;
+    bottom: -10%;
+    left: -5%;
+    animation-delay: -5s;
+  }
+
+  .gradient-mesh .blob:nth-child(3) {
+    width: 350px;
+    height: 350px;
+    background: #8B5CF6;
+    top: 30%;
+    left: 40%;
+    animation-delay: -10s;
+  }
+
+  /* ── Featured Badge ── */
+  .featured-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest;
+    background: linear-gradient(135deg, rgba(0,230,57,0.15), rgba(0,230,57,0.05));
+    color: #00e639;
+    border: 1px solid rgba(0,230,57,0.2);
+  }
+
+  /* ── Proficiency Bar ── */
+  .proficiency-bar {
+    @apply h-1 rounded-full bg-outline-variant/30;
+    overflow: hidden;
+  }
+
+  .proficiency-bar .fill {
+    @apply h-full rounded-full;
+    background: linear-gradient(90deg, #00e639, #00c853);
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* ── Value Prop Card ── */
+  .value-card {
+    @apply glass-card p-6 md:p-8 flex flex-col gap-4;
+  }
+
+  .value-card .icon-wrapper {
+    @apply w-14 h-14 rounded-2xl flex items-center justify-center;
+    background: linear-gradient(135deg, rgba(0,230,57,0.1), rgba(0,230,57,0.02));
+    border: 1px solid rgba(0,230,57,0.15);
+  }
+
+  .dark .value-card .icon-wrapper {
+    background: linear-gradient(135deg, rgba(0,230,57,0.15), rgba(0,230,57,0.03));
+    border-color: rgba(0,230,57,0.2);
   }
 }

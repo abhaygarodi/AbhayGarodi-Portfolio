@@ -17,14 +17,17 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="w-full mt-auto border-t border-outline-variant dark:border-[#2a2d2e]">
-      <div className="max-w-container-max mx-auto px-5 md:px-8 py-12">
+    <footer className="w-full mt-auto border-t border-outline-variant dark:border-[#2a2d2e] relative overflow-hidden bg-surface-container-lowest/50 dark:bg-[#0a0a0a]/50 backdrop-blur-[8px]">
+      {/* Glow accent */}
+      <div className="absolute -bottom-48 left-1/2 -translate-x-1/2 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div className="max-w-container-max mx-auto px-5 md:px-8 py-12 relative z-10">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           {/* Brand Column */}
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-primary dark:bg-primary-fixed flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl bg-primary dark:bg-primary-fixed flex items-center justify-center border border-outline-variant/20">
                 <span className="text-on-primary dark:text-primary-container font-bold text-[14px]">
                   AG
                 </span>
@@ -35,7 +38,7 @@ export default function Footer() {
                 </h3>
               </div>
             </div>
-            <p className="font-body-md text-[14px] text-on-surface-variant dark:text-[#7a7d7e] max-w-xs">
+            <p className="font-body-md text-[14px] text-on-surface-variant dark:text-[#7a7d7e] max-w-xs leading-relaxed">
               Software Developer at Ravulapati TecHub, building ImpactSuite.AI.
               Engineering scalable systems with precision and passion.
             </p>
@@ -43,7 +46,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-label-caps text-label-caps text-primary dark:text-primary-fixed tracking-widest mb-4">
+            <h4 className="font-label-caps text-label-caps text-primary dark:text-primary-fixed tracking-widest mb-4 text-[10px]">
               NAVIGATION
             </h4>
             <nav className="flex flex-col gap-2">
@@ -51,7 +54,7 @@ export default function Footer() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="text-[14px] text-on-surface-variant dark:text-[#7a7d7e] hover:text-primary dark:hover:text-primary-fixed transition-colors w-fit"
+                  className="text-[14px] text-on-surface-variant dark:text-[#7a7d7e] hover:text-primary dark:hover:text-primary-fixed hover:translate-x-0.5 transition-all duration-200 w-fit"
                 >
                   {link.label}
                 </Link>
@@ -61,7 +64,7 @@ export default function Footer() {
 
           {/* Connect */}
           <div>
-            <h4 className="font-label-caps text-label-caps text-primary dark:text-primary-fixed tracking-widest mb-4">
+            <h4 className="font-label-caps text-label-caps text-primary dark:text-primary-fixed tracking-widest mb-4 text-[10px]">
               CONNECT
             </h4>
             <div className="flex flex-col gap-2">
@@ -73,7 +76,7 @@ export default function Footer() {
                   rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   className="inline-flex items-center gap-2 text-[14px] text-on-surface-variant dark:text-[#7a7d7e] hover:text-primary dark:hover:text-primary-fixed transition-colors w-fit"
                 >
-                  <span className="material-symbols-outlined text-[16px]">
+                  <span className="material-symbols-outlined text-[16px] text-secondary dark:text-secondary-fixed-dim">
                     {link.icon}
                   </span>
                   {link.label}
@@ -90,7 +93,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Abhay Garodi. Crafted with precision.
           </div>
           <div className="flex items-center gap-2 font-code-sm text-[12px] text-on-surface-variant dark:text-[#5a5d5e]">
-            <span className="w-2 h-2 rounded-full bg-secondary"></span>
+            <span className="w-2 h-2 rounded-full bg-secondary animate-pulse-glow"></span>
             All systems operational
           </div>
         </div>

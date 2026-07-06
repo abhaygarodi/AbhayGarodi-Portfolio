@@ -5,7 +5,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 
 const timeline = [
   {
-    period: "Mar 2025 – Present",
+    period: "Mar 2026 – Present",
     title: "Software Developer",
     org: "Ravulapati TecHub Pvt. Ltd., Hyderabad — Building ImpactSuite.AI",
     description: "Software Developer at Ravulapati TecHub, building ImpactSuite.AI — a comprehensive field force automation platform. Engaged in UI design for mobile applications and enterprise platforms using React Native. Developed a robust FastAPI + Next.js AI application enabling users to upload PDF documents and query their content with document-grounded responses, source page citations, and verbatim quotes.",
@@ -87,6 +87,7 @@ const techCategories = [
     items: ["Agile", "Scrum", "Jira", "UML", "SDLC", "OOP", "Design Patterns", "JUnit", "Selenium (Basics)"]
   }
 ];
+
 interface CertificationItem {
   title: string;
   org: string;
@@ -178,11 +179,17 @@ const activities = [
 
 export default function AboutPage() {
   return (
-    <div className="pt-24 md:pt-28 pb-24 max-w-container-max mx-auto px-5 md:px-8">
+    <div className="pt-24 md:pt-28 pb-24 max-w-container-max mx-auto px-5 md:px-8 relative overflow-hidden">
+      {/* Background blobs */}
+      <div className="gradient-mesh">
+        <div className="blob"></div>
+        <div className="blob"></div>
+      </div>
+
       {/* Header with Photo */}
       <AnimatedSection>
-        <section className="mb-16 md:mb-20">
-          <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+        <section className="mb-16 md:mb-20 relative z-10">
+          <div className="glass-card p-6 md:p-8 flex flex-col md:flex-row gap-8 md:gap-12 items-center md:items-start">
             {/* Profile Photo */}
             <div className="flex-shrink-0">
               <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-2xl overflow-hidden border-2 border-outline-variant dark:border-[#2a2d2e] shadow-xl group">
@@ -197,16 +204,16 @@ export default function AboutPage() {
               </div>
             </div>
             {/* Text Content */}
-            <div className="flex-1">
+            <div className="flex-1 text-center md:text-left">
               <span className="font-label-caps text-label-caps text-secondary dark:text-secondary-fixed-dim tracking-widest">ABOUT ME</span>
-              <h1 className="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary dark:text-primary-fixed mt-2 mb-6 max-w-3xl">
+              <h1 className="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary dark:text-primary-fixed mt-2 mb-6 max-w-3xl leading-tight">
                 System Configuration<br />
-                <span className="text-on-surface-variant dark:text-[#7a7d7e]">& Identity Matrix</span>
+                <span className="text-gradient">& Identity Matrix</span>
               </h1>
               <p className="font-body-lg text-body-lg text-on-surface-variant dark:text-[#9a9d9e] max-w-3xl">
                 Software Developer at Ravulapati TecHub, building ImpactSuite.AI. Focused on robust back-end APIs, interactive front-ends, and integrating intelligent AI workloads.
               </p>
-              <div className="flex flex-wrap gap-3 mt-4">
+              <div className="flex flex-wrap justify-center md:justify-start gap-3 mt-6">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-secondary/5 dark:bg-secondary/10 border border-secondary/20 rounded-full">
                   <span className="material-symbols-outlined text-[14px] text-secondary dark:text-secondary-fixed-dim">location_on</span>
                   <span className="font-code-sm text-[11px] text-secondary dark:text-secondary-fixed-dim">Hyderabad, India</span>
@@ -226,7 +233,7 @@ export default function AboutPage() {
       </AnimatedSection>
 
       {/* Main Content Grid */}
-      <div className="grid grid-cols-1 xl:grid-cols-12 gap-10 xl:gap-12">
+      <div className="grid grid-cols-1 xl:grid-cols-12 gap-10 xl:gap-12 relative z-10">
         {/* Left Column: Timeline */}
         <div className="xl:col-span-6">
           <AnimatedSection>
@@ -241,7 +248,7 @@ export default function AboutPage() {
               <AnimatedSection key={item.title} delay={i * 100}>
                 <div className="relative">
                   <div className={`absolute -left-[37px] top-1 w-4 h-4 rounded-full border-2 ${item.active
-                      ? "bg-secondary border-secondary/30 shadow-[0_0_10px_rgba(0,230,57,0.3)]"
+                      ? "bg-secondary border-secondary/30 shadow-[0_0_10px_rgba(0,230,57,0.3)] animate-pulse-glow"
                       : "bg-surface dark:bg-[#141617] border-outline-variant dark:border-[#3a3d3e]"
                     }`}></div>
                   <div className="flex flex-wrap items-center gap-2 mb-1">
@@ -276,7 +283,7 @@ export default function AboutPage() {
             <div className="flex flex-col gap-4">
               {techCategories.map((cat, i) => (
                 <AnimatedSection key={cat.title} delay={i * 100} animation="scale-in">
-                  <div className="card p-5 glow-hover">
+                  <div className="glass-card p-5">
                     <div className="flex items-center gap-2 mb-3">
                       <span className="material-symbols-outlined text-[20px] text-secondary dark:text-secondary-fixed-dim">{cat.icon}</span>
                       <h3 className="font-headline-sm text-[16px] font-semibold text-primary dark:text-primary-fixed">{cat.title}</h3>
@@ -308,9 +315,9 @@ export default function AboutPage() {
                   href: cert.href,
                   target: "_blank",
                   rel: "noopener noreferrer",
-                  className: "card p-4 flex gap-3 h-full glow-hover cursor-pointer"
+                  className: "glass-card p-4 flex gap-3 h-full cursor-pointer hover:border-secondary dark:hover:border-secondary-fixed-dim"
                 } : {
-                  className: "card p-4 flex gap-3 h-full glow-hover"
+                  className: "glass-card p-4 flex gap-3 h-full"
                 };
                 return (
                   <AnimatedSection key={cert.title} delay={i * 100}>
@@ -344,7 +351,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {achievements.map((ach, i) => (
                 <AnimatedSection key={ach.title} delay={i * 100}>
-                  <div className="card p-4 flex gap-3 h-full glow-hover">
+                  <div className="glass-card p-4 flex gap-3 h-full">
                     <span className="material-symbols-outlined text-[20px] text-secondary dark:text-secondary-fixed-dim flex-shrink-0 mt-0.5">{ach.icon}</span>
                     <div>
                       <h4 className="font-headline-sm text-[14px] font-semibold text-primary dark:text-primary-fixed leading-snug">{ach.title}</h4>
@@ -365,7 +372,7 @@ export default function AboutPage() {
               </h2>
             </AnimatedSection>
 
-            <div className="card p-5">
+            <div className="glass-card p-5">
               <ul className="space-y-3">
                 {activities.map((act, i) => (
                   <AnimatedSection key={i} delay={i * 50}>
@@ -378,6 +385,7 @@ export default function AboutPage() {
               </ul>
             </div>
           </div>
+
           {/* Languages */}
           <div>
             <AnimatedSection>
@@ -390,7 +398,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {languages.map((lang, i) => (
                 <AnimatedSection key={lang.name} delay={i * 100}>
-                  <div className="card p-5 text-center glow-hover">
+                  <div className="glass-card p-5 text-center">
                     <span className="material-symbols-outlined text-[24px] text-secondary dark:text-secondary-fixed-dim mb-2">{lang.icon}</span>
                     <h4 className="font-headline-sm text-[16px] font-semibold text-primary dark:text-primary-fixed">{lang.name}</h4>
                     <p className="font-code-sm text-[11px] text-on-surface-variant dark:text-[#7a7d7e] mt-1">{lang.level}</p>

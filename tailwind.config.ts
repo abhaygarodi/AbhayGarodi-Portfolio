@@ -60,11 +60,13 @@ const config: Config = {
       },
       borderRadius: {
         sm: "0.125rem",
-        DEFAULT: "0.25rem", // Soft: buttons, inputs, tags
+        DEFAULT: "0.25rem",
         md: "0.375rem",
-        lg: "0.5rem", // Cards, large containers
+        lg: "0.5rem",
         xl: "0.75rem",
-        full: "9999px", // Circular elements
+        "2xl": "1rem",
+        "3xl": "1.5rem",
+        full: "9999px",
       },
       spacing: {
         "container-max": "1280px",
@@ -110,6 +112,16 @@ const config: Config = {
       },
       backdropBlur: {
         glass: "12px",
+        "glass-lg": "20px",
+      },
+      animation: {
+        "gradient-shift": "gradient-shift 15s ease-in-out infinite",
+        "float": "float 6s ease-in-out infinite",
+        "shimmer": "shimmer 0.6s ease-out",
+        "marquee": "marquee 30s linear infinite",
+        "glow-breathe": "glow-breathe 3s ease-in-out infinite",
+        "scale-pulse": "scale-pulse 3s ease-in-out infinite",
+        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
       },
     },
   },

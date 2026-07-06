@@ -6,7 +6,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 
 function StatusBadge({ status }: { status: string }) {
   const colors: Record<string, string> = {
-    Live: "bg-secondary",
+    Live: "bg-secondary animate-pulse-glow",
     Stable: "bg-[#febc2e]",
     Archived: "bg-outline dark:bg-[#5a5d5e]",
   };
@@ -20,8 +20,14 @@ function StatusBadge({ status }: { status: string }) {
 
 export default function ProjectsPage() {
   return (
-    <div className="pt-20 lg:pt-0 min-h-screen flex flex-col">
-      <div className="flex-1 px-5 md:px-8 py-12 md:py-24 max-w-container-max mx-auto w-full">
+    <div className="pt-20 lg:pt-0 min-h-screen flex flex-col relative overflow-hidden">
+      {/* Background blobs */}
+      <div className="gradient-mesh">
+        <div className="blob"></div>
+        <div className="blob"></div>
+      </div>
+
+      <div className="flex-1 px-5 md:px-8 py-12 md:py-24 max-w-container-max mx-auto w-full relative z-10">
         {/* Page Header */}
         <AnimatedSection>
           <header className="mb-14">
@@ -47,15 +53,22 @@ export default function ProjectsPage() {
             <AnimatedSection key={project.slug} className="col-span-1 lg:col-span-2">
               <Link
                 href={`/projects/${project.slug}`}
-                className="flex flex-col md:flex-row gap-8 card p-6 md:p-10 group relative overflow-hidden"
+                className="flex flex-col md:flex-row gap-8 glass-card gradient-border-card p-6 md:p-10 group relative overflow-hidden"
               >
+                <div className="featured-badge mb-4 md:mb-0 md:absolute md:top-6 md:right-6 z-10">
+                  <span className="material-symbols-outlined text-[12px]">star</span>
+                  FEATURED
+                </div>
                 <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-secondary/5 to-transparent rounded-full -mr-20 -mt-20 pointer-events-none group-hover:from-secondary/10 transition-all duration-500"></div>
                 <div className="flex-1 flex flex-col justify-between z-10">
                   <div>
-                    <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center justify-between mb-4 mt-6 md:mt-0">
                       <h2 className="font-headline-md text-headline-md text-primary dark:text-primary-fixed group-hover:text-secondary dark:group-hover:text-secondary-fixed-dim transition-colors">{project.title}</h2>
                       <StatusBadge status={project.status} />
                     </div>
+                    {project.subtitle && (
+                      <p className="font-code-sm text-[12px] text-secondary dark:text-secondary-fixed-dim mb-3">{project.subtitle}</p>
+                    )}
                     <p className="font-body-md text-body-md text-on-surface-variant dark:text-[#9a9d9e] mb-6 leading-relaxed">{project.description}</p>
                   </div>
                   <div className="space-y-5">
@@ -65,7 +78,7 @@ export default function ProjectsPage() {
                       ))}
                     </div>
                     {project.metrics && (
-                      <div className="flex flex-wrap gap-6 border-t border-outline-variant dark:border-[#2a2d2e] pt-5">
+                      <div className="flex flex-wrap gap-6 border-t border-outline-variant/30 dark:border-[#2a2d2e]/30 pt-5">
                         {project.metrics.map((m) => (
                           <div key={m.label} className="text-center">
                             <div className="font-headline-sm text-[20px] font-bold text-primary dark:text-primary-fixed">{m.value}</div>
@@ -76,7 +89,7 @@ export default function ProjectsPage() {
                     )}
                   </div>
                 </div>
-                <div className="flex items-center gap-1 text-on-surface-variant dark:text-[#7a7d7e] group-hover:text-secondary dark:group-hover:text-secondary-fixed-dim transition-colors self-end">
+                <div className="flex items-center gap-1 text-on-surface-variant dark:text-[#7a7d7e] group-hover:text-secondary dark:group-hover:text-secondary-fixed-dim transition-colors self-end mt-4 md:mt-0">
                   <span className="font-code-sm text-[13px]">Case Study</span>
                   <span className="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1">arrow_forward</span>
                 </div>
@@ -89,7 +102,7 @@ export default function ProjectsPage() {
             <AnimatedSection key={project.slug} delay={i * 150}>
               <Link
                 href={`/projects/${project.slug}`}
-                className="flex flex-col justify-between card p-6 group relative overflow-hidden h-full"
+                className="flex flex-col justify-between glass-card gradient-border-card p-6 group relative overflow-hidden h-full"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-secondary/5 to-transparent rounded-full -mr-10 -mt-10 pointer-events-none group-hover:from-secondary/10 transition-all duration-500"></div>
                 <div className="z-10">
@@ -97,15 +110,18 @@ export default function ProjectsPage() {
                     <h2 className="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed group-hover:text-secondary dark:group-hover:text-secondary-fixed-dim transition-colors">{project.title}</h2>
                     <StatusBadge status={project.status} />
                   </div>
+                  {project.subtitle && (
+                    <p className="font-code-sm text-[12px] text-secondary dark:text-secondary-fixed-dim mb-2">{project.subtitle}</p>
+                  )}
                   <p className="font-body-md text-body-md text-on-surface-variant dark:text-[#9a9d9e] mb-6">{project.description}</p>
                 </div>
-                <div className="z-10">
+                <div className="z-10 mt-auto">
                   <div className="flex flex-wrap gap-2 mb-5">
                     {project.tags.map((tag) => (
                       <span key={tag} className="tech-tag">{tag}</span>
                     ))}
                   </div>
-                  <div className="flex items-center gap-1 text-on-surface-variant dark:text-[#7a7d7e] group-hover:text-secondary dark:group-hover:text-secondary-fixed-dim transition-colors border-t border-outline-variant dark:border-[#2a2d2e] pt-4">
+                  <div className="flex items-center gap-1 text-on-surface-variant dark:text-[#7a7d7e] group-hover:text-secondary dark:group-hover:text-secondary-fixed-dim transition-colors border-t border-outline-variant/30 dark:border-[#2a2d2e]/30 pt-4">
                     <span className="font-code-sm text-[13px]">Explore</span>
                     <span className="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1">arrow_forward</span>
                   </div>
