@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Material Symbols ── */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+.icon-fill {
+  font-variation-settings: 'FILL' 1;
+}
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c4c7c7;
+  border-radius: 100px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #3a3d3e;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #747878;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #5a5d5e;
+}
+
+/* ── Smooth Scrolling ── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Keyframe Animations ── */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(0, 230, 57, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 230, 57, 0.6);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* ── Base Layer ── */
+@layer base {
+  body {
+    @apply bg-background text-on-background font-body-md antialiased;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  /* Dark mode overrides for body */
+  .dark body {
+    background-color: #0a0b0d;
+    color: #e1e3e4;
+  }
+
+  .status-live {
+    @apply inline-block w-2 h-2 rounded-full bg-secondary;
+  }
+
+  .status-archived {
+    @apply inline-block w-2 h-2 rounded-full bg-outline;
+  }
+
+  *:focus-visible {
+    @apply outline-1 outline-offset-2 outline-secondary;
+  }
+
+  ::selection {
+    @apply bg-secondary-fixed-dim/30 text-primary;
+  }
+
+  .dark ::selection {
+    background: rgba(0, 230, 57, 0.2);
+    color: #f0f1f2;
+  }
+}
+
+/* ── Components Layer ── */
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-on-primary font-body-md text-body-md py-3 px-8 rounded-lg
+           hover:shadow-lg transition-all duration-300 relative overflow-hidden
+           active:scale-[0.98];
+  }
+
+  .dark .btn-primary {
+    background-color: #e5e2e1;
+    color: #1c1b1b;
+  }
+
+  .dark .btn-primary:hover {
+    background-color: #c8c6c5;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent text-primary border border-primary font-body-md text-body-md
+           py-3 px-8 rounded-lg hover:bg-primary hover:text-on-primary
+           transition-all duration-300 active:scale-[0.98];
+  }
+
+  .dark .btn-secondary {
+    border-color: #e5e2e1;
+    color: #e5e2e1;
+  }
+
+  .dark .btn-secondary:hover {
+    background-color: #e5e2e1;
+    color: #1c1b1b;
+  }
+
+  .tech-tag {
+    @apply font-label-caps text-label-caps bg-surface-container py-1.5 px-3 rounded-md
+           border border-outline-variant text-tertiary-container
+           hover:border-secondary hover:text-secondary transition-all duration-200
+           cursor-default select-none;
+  }
+
+  .dark .tech-tag {
+    background-color: #1a1d1e;
+    border-color: #3a3d3e;
+    color: #b8c3ff;
+  }
+
+  .dark .tech-tag:hover {
+    border-color: #00e639;
+    color: #00e639;
+  }
+
+  .code-block {
+    @apply bg-[#0d0d0d] text-[#e0e0e0] font-code-sm text-code-sm p-6 rounded-lg overflow-x-auto
+           border border-[#2a2a2a];
+  }
+
+  .card {
+    @apply border border-outline-variant rounded-xl bg-surface
+           transition-all duration-300 hover:shadow-md;
+  }
+
+  .dark .card {
+    background-color: #141617;
+    border-color: #2a2d2e;
+  }
+
+  .dark .card:hover {
+    border-color: #3a3d3e;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  }
+
+  .nav-glass {
+    @apply bg-surface/80 backdrop-blur-[16px] border-b border-outline-variant
+           shadow-[0_1px_3px_rgba(0,0,0,0.05)];
+  }
+
+  .dark .nav-glass {
+    background-color: rgba(10, 11, 13, 0.85);
+    border-color: #2a2d2e;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
+
+  .glow-hover:hover {
+    box-shadow: 0 0 30px rgba(0, 230, 57, 0.1);
+  }
+
+  .dark .glow-hover:hover {
+    box-shadow: 0 0 40px rgba(0, 230, 57, 0.15);
+  }
+
+  .section-divider {
+    @apply w-full h-px bg-gradient-to-r from-transparent via-outline-variant to-transparent;
+  }
+
+  .dark .section-divider {
+    background: linear-gradient(to right, transparent, #2a2d2e, transparent);
+  }
+}

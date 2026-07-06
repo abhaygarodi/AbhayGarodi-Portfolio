@@ -1,0 +1,118 @@
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  darkMode: "class",
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        "surface-tint": "#5f5e5e",
+        "error-container": "#ffdad6",
+        "tertiary-container": "#001356",
+        "surface-container-low": "#f3f4f5",
+        "primary-fixed": "#e5e2e1",
+        "outline-variant": "#c4c7c7",
+        "on-surface": "#191c1d",
+        "surface-container": "#edeeef",
+        "primary-container": "#1c1b1b",
+        "on-tertiary": "#ffffff",
+        "inverse-surface": "#2e3132",
+        "surface-container-high": "#e7e8e9",
+        "on-secondary-fixed-variant": "#00530e",
+        "on-error-container": "#93000a",
+        "on-primary-fixed": "#1c1b1b",
+        "surface-dim": "#d9dadb",
+        "surface-container-lowest": "#ffffff",
+        "on-secondary": "#ffffff",
+        "secondary-fixed-dim": "#00e639",
+        "tertiary-fixed": "#dde1ff",
+        "inverse-primary": "#c8c6c5",
+        "surface-variant": "#e1e3e4",
+        "surface-bright": "#f8f9fa",
+        "background": "#f8f9fa",
+        "surface-container-highest": "#e1e3e4",
+        "secondary": "#006e16",
+        "on-secondary-fixed": "#002203",
+        "primary-fixed-dim": "#c8c6c5",
+        "on-tertiary-fixed": "#001356",
+        "secondary-fixed": "#72ff70",
+        "inverse-on-surface": "#f0f1f2",
+        "on-surface-variant": "#444748",
+        "tertiary-fixed-dim": "#b8c3ff",
+        "outline": "#747878",
+        "on-tertiary-container": "#5979ff",
+        "error": "#ba1a1a",
+        "primary": "#000000",
+        "on-tertiary-fixed-variant": "#0035be",
+        "on-primary": "#ffffff",
+        "on-error": "#ffffff",
+        "on-secondary-container": "#006d16",
+        "tertiary": "#000000",
+        "surface": "#f8f9fa",
+        "on-primary-container": "#858383",
+        "on-background": "#191c1d",
+        "secondary-container": "#00f93f",
+        "on-primary-fixed-variant": "#474746",
+      },
+      borderRadius: {
+        sm: "0.125rem",
+        DEFAULT: "0.25rem", // Soft: buttons, inputs, tags
+        md: "0.375rem",
+        lg: "0.5rem", // Cards, large containers
+        xl: "0.75rem",
+        full: "9999px", // Circular elements
+      },
+      spacing: {
+        "container-max": "1280px",
+        "margin-desktop": "64px",
+        "margin-mobile": "20px",
+        unit: "8px",
+        gutter: "32px",
+      },
+      fontFamily: {
+        "display-lg": ["Hanken Grotesk", "sans-serif"],
+        "display-lg-mobile": ["Hanken Grotesk", "sans-serif"],
+        "headline-md": ["Hanken Grotesk", "sans-serif"],
+        "headline-sm": ["Hanken Grotesk", "sans-serif"],
+        "body-lg": ["Hanken Grotesk", "sans-serif"],
+        "body-md": ["Hanken Grotesk", "sans-serif"],
+        "code-sm": ["JetBrains Mono", "monospace"],
+        "label-caps": ["JetBrains Mono", "monospace"],
+      },
+      fontSize: {
+        "display-lg": [
+          "64px",
+          { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" },
+        ],
+        "display-lg-mobile": [
+          "40px",
+          { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" },
+        ],
+        "headline-md": [
+          "32px",
+          { lineHeight: "1.3", fontWeight: "600" },
+        ],
+        "headline-sm": [
+          "24px",
+          { lineHeight: "1.4", fontWeight: "600" },
+        ],
+        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+        "code-sm": ["14px", { lineHeight: "1.5", fontWeight: "400" }],
+        "label-caps": [
+          "12px",
+          { lineHeight: "1.0", letterSpacing: "0.1em", fontWeight: "600" },
+        ],
+      },
+      backdropBlur: {
+        glass: "12px",
+      },
+    },
+  },
+  plugins: [],
+};
+export default config;
