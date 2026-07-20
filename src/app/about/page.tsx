@@ -6,11 +6,19 @@ import AnimatedSection from "@/components/AnimatedSection";
 const timeline = [
   {
     period: "Mar 2026 – Present",
-    title: "Software Developer",
+    title: "Junior Software Developer",
     org: "Ravulapati TecHub Pvt. Ltd., Hyderabad — Building ImpactSuite.AI",
-    description: "Software Developer at Ravulapati TecHub, building ImpactSuite.AI — a comprehensive field force automation platform. Engaged in UI design for mobile applications and enterprise platforms using React Native. Developed a robust FastAPI + Next.js AI application enabling users to upload PDF documents and query their content with document-grounded responses, source page citations, and verbatim quotes.",
+    description: "Developed UI components and user flows for mobile and enterprise applications using React Native and modern frontend practices. Contributed to ImpactSuite AI, a multi-service platform for field-force automation, analytics, and enterprise workflows. Built and maintained backend services using Java, Spring Boot, Python, and FastAPI for authentication, business logic, REST APIs, and integrations. Resolved bugs, improved application performance, and optimized workflows to increase reliability, maintainability, and operational efficiency.",
     active: true,
     type: "Work"
+  },
+  {
+    period: "May 2026 – Present",
+    title: "Shanmukha App & Portal",
+    org: "Enterprise & Field-Force Operations",
+    description: "Contributed to the development of the Shanmukha mobile application and portal for enterprise and field-force operations. Built and improved role-based user workflows, business modules, and responsive UI components across mobile and web interfaces. Integrated API-driven features for data handling, authentication, reporting, and user interaction in a scalable application environment.",
+    active: true,
+    type: "Project"
   },
   {
     period: "Sep 2025 – Feb 2026",
@@ -19,6 +27,22 @@ const timeline = [
     description: "Post Graduate Diploma focusing on advanced software development, enterprise frameworks, and architecture. Secured 65/100.",
     active: false,
     type: "Education"
+  },
+  {
+    period: "Mar 2026 – May 2026",
+    title: "AI Document Chat App",
+    org: "PDF Q&A with Source Citations",
+    description: "Built a full-stack AI-powered document chat application using FastAPI with LangChain for document processing, chunking, and RAG. Each response is grounded in the actual document content, providing page-level citations and verbatim quotes. The Next.js frontend provides a real-time chat interface with document upload and conversation history.",
+    active: false,
+    type: "Project"
+  },
+  {
+    period: "Nov 2025 – Jan 2026",
+    title: "Micro-Donation Platform",
+    org: "School Fees & Medical Bills",
+    description: "Developed a secure micro-donation platform enabling transparent contributions toward verified school fees and medical bills. Implemented role-based authentication and authorization using Spring Security with JWT. Designed RESTful backend services using Spring Boot and Hibernate/JPA. Built a responsive React frontend with routing and dashboard visualizations.",
+    active: false,
+    type: "Project"
   },
   {
     period: "Jan 2025 – Feb 2025",

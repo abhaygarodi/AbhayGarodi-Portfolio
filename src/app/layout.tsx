@@ -7,18 +7,20 @@ import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 
 export const metadata: Metadata = {
-  title: "Abhay Garodi — Software Developer | Full Stack Engineer",
+  title: "Abhay Garodi — Software Developer | Java | Spring Boot | Python | FastAPI | React Native | Full Stack Developer",
   description:
-    "Software Developer at Ravulapati TecHub, building ImpactSuite.AI. Full-stack engineer specializing in Java, Spring Boot, React, React Native, FastAPI, and AI-powered applications.",
+    "Software Developer with experience in Java, Spring Boot, Python, FastAPI, React Native, Next.js, REST APIs, PostgreSQL, Git, Docker, and Kubernetes. Skilled in backend development, API integration, debugging, performance optimization, authentication, and enterprise application development.",
   keywords: [
     "Abhay Garodi",
     "Software Developer",
     "Full Stack Developer",
-    "React",
-    "Spring Boot",
     "Java",
-    "React Native",
+    "Spring Boot",
+    "Python",
     "FastAPI",
+    "React Native",
+    "Next.js",
+    "React",
     "ImpactSuite.AI",
     "Ravulapati TecHub",
     "Portfolio",
@@ -27,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Abhay Garodi — Software Developer | Full Stack Engineer",
     description:
-      "Software Developer at Ravulapati TecHub, building ImpactSuite.AI. Specializing in full-stack engineering, React Native, and AI-powered applications.",
+      "Software Developer with experience in Java, Spring Boot, Python, FastAPI, React Native, Next.js, REST APIs, PostgreSQL, Git, Docker, and Kubernetes.",
     type: "website",
   },
 };

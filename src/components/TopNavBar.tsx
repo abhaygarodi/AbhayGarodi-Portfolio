@@ -88,6 +88,7 @@ export default function TopNavBar() {
           <ThemeToggle />
           <a
             href="/resume.pdf"
+            download="Abhay Garodi - Resume.pdf"
             className="hidden sm:inline-flex items-center gap-2 text-[14px] font-medium text-primary dark:text-primary-fixed border border-outline-variant dark:border-[#3a3d3e] px-4 py-1.5 rounded-lg hover:bg-surface-container-low dark:hover:bg-[#1a1d1e] transition-all duration-200"
           >
             <span className="material-symbols-outlined text-[16px]">

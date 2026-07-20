@@ -36,6 +36,111 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "impactsuite-ai",
+    title: "ImpactSuite AI Platform",
+    subtitle: "Under Development",
+    description:
+      "A monorepo-based enterprise platform combining Spring Boot services, Python/FastAPI AI capabilities, and Next.js portals for field-force automation, analytics, and enterprise workflows. Worked on authentication, tenant/business logic, API integrations, debugging, and performance optimization.",
+    longDescription:
+      "Contributed to ImpactSuite AI, a multi-service platform for field-force automation, analytics, and enterprise workflows. Developed UI components and user flows for mobile and enterprise applications using React Native. Built and maintained backend services using Java, Spring Boot, Python, and FastAPI for authentication, business logic, REST APIs, and integrations. Resolved bugs, improved application performance, and optimized workflows to increase reliability, maintainability, and operational efficiency.",
+    period: "Mar 2026 – Present",
+    status: "Live",
+    tags: ["Java", "Spring Boot", "Python", "FastAPI", "React Native", "Next.js"],
+    techTags: [
+      "Java",
+      "Spring Boot",
+      "Python",
+      "FastAPI",
+      "Next.js",
+      "REST APIs",
+      "PostgreSQL",
+      "JWT",
+      "Git",
+      "Docker",
+      "Kubernetes",
+    ],
+    links: [
+      {
+        label: "Source Code",
+        href: "https://github.com/abhaygarodi",
+        icon: "code",
+      },
+    ],
+    metrics: [
+      { label: "Type", value: "Enterprise" },
+      { label: "Architecture", value: "Monorepo" },
+      { label: "Status", value: "In Development" },
+    ],
+    caseStudy: {
+      hero: "Featured Project",
+      architectureDescription:
+        "ImpactSuite AI follows a monorepo architecture combining Spring Boot microservices, Python/FastAPI AI services, and Next.js frontend portals. The platform integrates authentication, multi-tenant business logic, and analytics for field-force automation.",
+      architectureFeatures: [
+        "Spring Boot Services: Backend microservices handling authentication, business logic, and data persistence with JPA/Hibernate.",
+        "Python/FastAPI AI: Integrated AI capabilities for analytics and automation using Python and FastAPI.",
+        "Next.js Portals: Modern React-based frontend portals for admin, tenant, and analytics user experiences.",
+      ],
+      challenges: [
+        {
+          title: "Multi-Tenant Architecture",
+          description:
+            "Designing a scalable multi-tenant system that isolates data while maintaining performance across tenants.",
+          code: `@Configuration
+public class TenantConfig {
+    @Bean
+    public FilterRegistrationBean<TenantFilter> tenantFilter() {
+        FilterRegistrationBean<TenantFilter> registration = 
+            new FilterRegistrationBean<>();
+        registration.setFilter(new TenantFilter());
+        registration.addUrlPatterns("/api/*");
+        registration.setOrder(1);
+        return registration;
+    }
+}`,
+        },
+      ],
+      results: [
+        { label: "Services", value: "Multi-Service" },
+        { label: "Auth", value: "JWT + Roles" },
+        { label: "Architecture", value: "Monorepo" },
+      ],
+    },
+  },
+  {
+    slug: "shanmukha-app",
+    title: "Shanmukha App & Portal",
+    subtitle: "Enterprise & Field-Force Operations",
+    description:
+      "A mobile application and portal for enterprise and field-force operations. Built role-based user workflows, business modules, and responsive UI components across mobile and web interfaces. Integrated API-driven features for data handling, authentication, reporting, and user interaction.",
+    longDescription:
+      "Contributed to the development of the Shanmukha mobile application and portal for enterprise and field-force operations. Built and improved role-based user workflows, business modules, and responsive UI components across mobile and web interfaces. Integrated API-driven features for data handling, authentication, reporting, and user interaction in a scalable application environment. Focused on delivering consistent user experience, maintainable code, and reliable functionality across the application ecosystem.",
+    period: "May 2026 – Present",
+    status: "Live",
+    tags: ["React Native", "Next.js", "FastAPI", "Mobile", "Web"],
+    techTags: [
+      "React Native",
+      "Next.js",
+      "FastAPI",
+      "REST APIs",
+      "UI/UX",
+      "Mobile Development",
+      "Web Development",
+      "Authentication",
+    ],
+    links: [
+      {
+        label: "Live App",
+        href: "https://shanmukha-app.ssgcapps.in/",
+        icon: "open_in_new",
+      },
+    ],
+    metrics: [
+      { label: "Platform", value: "Mobile + Web" },
+      { label: "Type", value: "Enterprise" },
+      { label: "Status", value: "In Development" },
+    ],
+  },
+  {
     slug: "micro-donation-platform",
     title: "Micro-Donation Platform",
     subtitle: "School Fees & Medical Bills",

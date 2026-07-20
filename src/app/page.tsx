@@ -43,14 +43,14 @@ const codingProfiles = [
 ];
 
 const companies = [
-  { name: "Ravulapati TecHub", role: "Software Developer" },
+  { name: "Ravulapati TecHub", role: "Junior Software Developer" },
   { name: "ImpactSuite.AI", role: "Product Engineering" },
   { name: "C-DAC Hyderabad", role: "PG-DAC Graduate" },
   { name: "FUEL Pune", role: "Java Intern" },
   { name: "Zidio Development", role: "Web Dev Intern" },
 ];
 
-const techStack = [
+const techStackData = [
   {
     category: "Frontend",
     color: "#61DAFB",
@@ -62,7 +62,7 @@ const techStack = [
     ],
   },
   {
-    category: "Backend",
+    category: "Backend & Frameworks",
     color: "#00e639",
     items: [
       { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
@@ -73,7 +73,7 @@ const techStack = [
     ],
   },
   {
-    category: "Database & DevOps",
+    category: "Databases & DevOps",
     color: "#5979ff",
     items: [
       { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
@@ -81,17 +81,97 @@ const techStack = [
       { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
       { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
       { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+      { name: "Kubernetes", icon: "" },
     ],
   },
   {
-    category: "AI & Cloud",
+    category: "AI & Automation",
     color: "#8B5CF6",
     items: [
       { name: "LangChain", icon: "" },
       { name: "OpenAI", icon: "" },
-      { name: "AWS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" },
+      { name: "Prompt Engineering", icon: "" },
+      { name: "n8n", icon: "" },
     ],
   },
+];
+
+const experienceData = [
+  {
+    role: "Junior Software Developer",
+    period: "Mar 2026 – Present",
+    company: "Ravulapati TecHub Pvt. Ltd., Hyderabad, Telangana",
+    points: [
+      "Developed UI components and user flows for mobile and enterprise applications using React Native and modern frontend practices.",
+      "Contributed to ImpactSuite AI, a multi-service platform for field-force automation, analytics, and enterprise workflows.",
+      "Built and maintained backend services using Java, Spring Boot, Python, and FastAPI for authentication, business logic, REST APIs, and integrations.",
+      "Resolved bugs, improved application performance, and optimized workflows to increase reliability, maintainability, and operational efficiency.",
+    ],
+  },
+];
+
+const internshipData = [
+  {
+    role: "Core Java Training & Intern",
+    period: "Jan 2025 – Feb 2025",
+    company: "Friends Union For Energising Lives (FUEL), Pune",
+    points: [
+      "Completed intensive Java training: built hands-on OOP projects covering inheritance, polymorphism, and collections.",
+      "Enhanced soft skills, teamwork, and discipline through LinkedIn Learning and internship-based activities.",
+    ],
+  },
+  {
+    role: "Web Development Intern",
+    period: "Sep 2024 – Oct 2024",
+    company: "Zidio Development, Bengaluru",
+    points: [
+      "Designed and shipped user-facing interfaces for collaborative web projects using HTML, CSS, and JavaScript.",
+      "Strengthened front-end development skills while contributing to key projects and building a strong foundation.",
+    ],
+  },
+];
+
+const educationData = [
+  {
+    degree: "PG-Diploma in Advanced Computing (DAC)",
+    period: "Sep 2025 – Feb 2026",
+    institution: "Center for Development in Advanced Computing (CDAC), Hyderabad",
+    score: "Percentage: 65/100",
+  },
+  {
+    degree: "B.E. in Electronics and Telecommunication Engineering",
+    period: "Dec 2022 – Jun 2025",
+    institution: "Kavayitri Bahinabai Chaudhari North Maharashtra University, Jalgaon",
+    score: "CGPA: 8.37/10",
+  },
+  {
+    degree: "Diploma in Computer Engineering",
+    period: "Aug 2019 – Jun 2022",
+    institution: "Maharashtra State Board of Technical Education, Mumbai",
+    score: "Percentage: 79.26/100",
+  },
+];
+
+const certifications = [
+  "Anthropic Claude 101 – Received certification for Anthropic Claude 101",
+  "Mastering Java + Spring Boot: REST APIs and Microservices – Udemy",
+  "What Is Generative AI? – LinkedIn Learning",
+  "Tata Imagination Challenge 2024 – Student Track, organized by- Tata Group",
+  "SQL (Advanced) - HackerRank",
+];
+
+const achievements = [
+  "Participated in Tata Imagination Challenge 2024 : Student Track, organized by Tata Group.",
+  "Finalist in Smart India Hackathon (SSBT College): Contributed to an innovative full-stack solution.",
+  "Active GitHub profile with multiple repositories: consistently contributing to open-source and personal projects.",
+  "Built and deployed a full-stack portfolio website using React and Vercel for production hosting.",
+];
+
+const leadershipActivities = [
+  "Coordinated and managed all activities of the Milestone Event 2024 during a Hackathon.",
+  "Completed a 5-day Soft Skills Training program by Rubicon.",
+  "Actively participated in college technical fests and coding competitions.",
+  "Mentored junior students on Java fundamentals and project development best practices.",
 ];
 
 /* ══════════════════════════════════════════
@@ -187,11 +267,10 @@ export default function HomePage() {
 
           <AnimatedSection delay={150}>
             <h1 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary dark:text-primary-fixed max-w-3xl leading-tight">
-              Building{" "}
-              <span className="text-gradient">Production-Grade</span>
+              <span className="text-gradient">Software Developer</span>
               <br />
               <Typewriter
-                words={["Backend Systems", "Mobile Apps", "AI Pipelines", "Cloud Architectures"]}
+                words={["Java | Spring Boot", "Python | FastAPI", "React Native", "Full Stack Engineering"]}
                 className="text-on-surface-variant dark:text-[#7a7d7e]"
               />
             </h1>
@@ -199,10 +278,9 @@ export default function HomePage() {
 
           <AnimatedSection delay={300}>
             <p className="font-body-lg text-body-lg text-on-surface-variant dark:text-[#9a9d9e] max-w-2xl">
-              Software Developer at <strong className="text-primary dark:text-primary-fixed">Ravulapati TecHub</strong>, engineering{" "}
-              <strong className="text-gradient-green">ImpactSuite.AI</strong> — a field force automation platform.
-              I architect full-stack systems with <strong className="text-primary dark:text-primary-fixed">Java, Spring Boot, React, FastAPI</strong>,
-              and build intelligent AI tools that solve real problems.
+              Software Developer with experience in <strong className="text-primary dark:text-primary-fixed">Java, Spring Boot, Python, FastAPI, React Native, Next.js, REST APIs, PostgreSQL, Git, Docker, and Kubernetes</strong>.
+              Skilled in backend development, API integration, debugging, performance optimization, authentication, and enterprise application development.
+              Strong interest in full-stack development, automation, and building scalable solutions for product and business applications.
             </p>
           </AnimatedSection>
 
@@ -218,6 +296,7 @@ export default function HomePage() {
               </Link>
               <a
                 href="/resume.pdf"
+                download="Abhay Garodi - Resume.pdf"
                 className="inline-flex items-center gap-2 text-[14px] font-medium text-on-surface-variant dark:text-[#9a9d9e] border border-outline-variant dark:border-[#3a3d3e] px-6 py-3 rounded-lg hover:bg-surface-container-low dark:hover:bg-[#1a1d1e] hover:text-primary dark:hover:text-primary-fixed transition-all duration-200 hover:border-secondary dark:hover:border-secondary-fixed-dim"
               >
                 <span className="material-symbols-outlined text-[18px]">download</span>
@@ -227,7 +306,7 @@ export default function HomePage() {
           </AnimatedSection>
         </div>
 
-        {/* Code Terminal — Enhanced */}
+        {/* Code Terminal */}
         <AnimatedSection animation="fade-left" delay={300} className="flex-1 w-full relative z-10">
           <div className="w-full h-[380px] md:h-[420px] relative rounded-2xl overflow-hidden border border-outline-variant dark:border-[#2a2d2e] bg-[#0d0d0d] flex flex-col group glow-hover transition-all duration-500 shadow-2xl dark:shadow-[0_25px_60px_rgba(0,0,0,0.5)]">
             {/* Terminal Header */}
@@ -262,14 +341,61 @@ async function initializeCluster() {
             </pre>
             {/* Glow accent */}
             <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-secondary/5 to-transparent pointer-events-none"></div>
-            {/* Corner glow */}
             <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#00e639]/5 rounded-full blur-3xl pointer-events-none group-hover:bg-[#00e639]/10 transition-all duration-700"></div>
           </div>
         </AnimatedSection>
       </section>
 
       {/* ═══════════════════════════════════════
-          COMPANY MARQUEE — "Where I've Contributed"
+          PROFESSIONAL SUMMARY
+          ═══════════════════════════════════════ */}
+      <AnimatedSection>
+        <section className="px-5 md:px-8 py-16 max-w-container-max mx-auto">
+          <div className="glass-card p-8 md:p-12">
+            <span className="font-label-caps text-label-caps text-secondary dark:text-secondary-fixed-dim tracking-widest">PROFESSIONAL SUMMARY</span>
+            <h2 className="font-headline-md text-headline-md text-primary dark:text-primary-fixed mt-2 mb-6">About Me</h2>
+            <p className="font-body-lg text-body-lg text-on-surface-variant dark:text-[#9a9d9e] leading-relaxed max-w-4xl">
+              Software Developer with experience in <strong className="text-primary dark:text-primary-fixed">Java, Spring Boot, Python, FastAPI, React Native, Next.js, REST APIs, PostgreSQL, Git, Docker, and Kubernetes</strong>.
+              Skilled in backend development, API integration, debugging, performance optimization, authentication, and enterprise application development.
+              Strong interest in full-stack development, automation, and building scalable solutions for product and business applications in Hyderabad and Pune.
+            </p>
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* ═══════════════════════════════════════
+          EXPERIENCE SECTION
+          ═══════════════════════════════════════ */}
+      <AnimatedSection>
+        <section className="px-5 md:px-8 py-16 max-w-container-max mx-auto">
+          <span className="font-label-caps text-label-caps text-secondary dark:text-secondary-fixed-dim tracking-widest">EXPERIENCE</span>
+          <h2 className="font-headline-md text-headline-md text-primary dark:text-primary-fixed mt-2 mb-8">Where I've Worked</h2>
+          <div className="flex flex-col gap-6">
+            {experienceData.map((exp, i) => (
+              <AnimatedSection key={exp.role} delay={i * 100}>
+                <div className="glass-card p-6 md:p-8">
+                  <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+                    <h3 className="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed">{exp.role}</h3>
+                    <span className="font-code-sm text-[12px] text-on-surface-variant dark:text-[#7a7d7e] whitespace-nowrap">{exp.period}</span>
+                  </div>
+                  <p className="font-code-sm text-[13px] text-secondary dark:text-secondary-fixed-dim italic mb-4">{exp.company}</p>
+                  <ul className="space-y-3">
+                    {exp.points.map((point, j) => (
+                      <li key={j} className="flex gap-3 text-[15px] leading-relaxed text-on-surface-variant dark:text-[#9a9d9e]">
+                        <span className="material-symbols-outlined text-[18px] text-secondary dark:text-secondary-fixed-dim flex-shrink-0 mt-0.5">arrow_right</span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* ═══════════════════════════════════════
+          COMPANY MARQUEE
           ═══════════════════════════════════════ */}
       <AnimatedSection>
         <section className="border-y border-outline-variant dark:border-[#2a2d2e] bg-surface-container-lowest dark:bg-[#0a0a0a] py-8 overflow-hidden">
@@ -297,7 +423,6 @@ async function initializeCluster() {
                 </div>
               ))}
             </div>
-            {/* Fade edges */}
             <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-surface-container-lowest dark:from-[#0a0a0a] to-transparent z-10 pointer-events-none"></div>
             <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-surface-container-lowest dark:from-[#0a0a0a] to-transparent z-10 pointer-events-none"></div>
           </div>
@@ -305,7 +430,64 @@ async function initializeCluster() {
       </AnimatedSection>
 
       {/* ═══════════════════════════════════════
-          IMPACT METRICS — Animated Counters
+          INTERNSHIPS
+          ═══════════════════════════════════════ */}
+      <AnimatedSection>
+        <section className="px-5 md:px-8 py-16 max-w-container-max mx-auto">
+          <span className="font-label-caps text-label-caps text-secondary dark:text-secondary-fixed-dim tracking-widest">INTERNSHIPS</span>
+          <h2 className="font-headline-md text-headline-md text-primary dark:text-primary-fixed mt-2 mb-8">Training & Experience</h2>
+          <div className="flex flex-col gap-6">
+            {internshipData.map((intern, i) => (
+              <AnimatedSection key={intern.role} delay={i * 100}>
+                <div className="glass-card p-6 md:p-8">
+                  <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+                    <h3 className="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed">{intern.role}</h3>
+                    <span className="font-code-sm text-[12px] text-on-surface-variant dark:text-[#7a7d7e] whitespace-nowrap">{intern.period}</span>
+                  </div>
+                  <p className="font-code-sm text-[13px] text-secondary dark:text-secondary-fixed-dim italic mb-4">{intern.company}</p>
+                  <ul className="space-y-3">
+                    {intern.points.map((point, j) => (
+                      <li key={j} className="flex gap-3 text-[15px] leading-relaxed text-on-surface-variant dark:text-[#9a9d9e]">
+                        <span className="material-symbols-outlined text-[18px] text-secondary dark:text-secondary-fixed-dim flex-shrink-0 mt-0.5">arrow_right</span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* ═══════════════════════════════════════
+          EDUCATION
+          ═══════════════════════════════════════ */}
+      <AnimatedSection>
+        <section className="px-5 md:px-8 py-16 max-w-container-max mx-auto">
+          <span className="font-label-caps text-label-caps text-secondary dark:text-secondary-fixed-dim tracking-widest">EDUCATION</span>
+          <h2 className="font-headline-md text-headline-md text-primary dark:text-primary-fixed mt-2 mb-8">Academic Background</h2>
+          <div className="flex flex-col gap-4">
+            {educationData.map((edu, i) => (
+              <AnimatedSection key={edu.degree} delay={i * 100}>
+                <div className="glass-card p-6 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+                  <div>
+                    <h3 className="font-headline-sm text-[16px] font-semibold text-primary dark:text-primary-fixed">{edu.degree}</h3>
+                    <p className="font-code-sm text-[12px] text-secondary dark:text-secondary-fixed-dim mt-1">{edu.institution}</p>
+                  </div>
+                  <div className="text-right flex-shrink-0">
+                    <span className="font-code-sm text-[12px] text-on-surface-variant dark:text-[#7a7d7e] block">{edu.period}</span>
+                    <span className="font-label-caps text-[11px] text-secondary dark:text-secondary-fixed-dim tracking-wider mt-1 block">{edu.score}</span>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* ═══════════════════════════════════════
+          IMPACT METRICS
           ═══════════════════════════════════════ */}
       <AnimatedSection>
         <section className="px-5 md:px-8 py-16 max-w-container-max mx-auto">
@@ -336,7 +518,7 @@ async function initializeCluster() {
       </AnimatedSection>
 
       {/* ═══════════════════════════════════════
-          FEATURED PROJECTS — Premium Cards
+          FEATURED PROJECTS
           ═══════════════════════════════════════ */}
       <section className="px-5 md:px-8 py-16 md:py-24 max-w-container-max mx-auto">
         <AnimatedSection>
@@ -360,7 +542,6 @@ async function initializeCluster() {
                 href={`/projects/${project.slug}`}
                 className={`flex flex-col glass-card gradient-border-card p-6 md:p-8 group relative overflow-hidden h-full ${i === 0 ? "md:flex-row md:gap-8" : ""}`}
               >
-                {/* Featured badge for first project */}
                 {i === 0 && (
                   <div className="featured-badge mb-4 md:mb-0 md:absolute md:top-6 md:right-6 z-10">
                     <span className="material-symbols-outlined text-[12px]">star</span>
@@ -399,6 +580,44 @@ async function initializeCluster() {
           ))}
         </div>
       </section>
+
+      {/* ═══════════════════════════════════════
+          TECHNICAL SKILLS (Resume-Style)
+          ═══════════════════════════════════════ */}
+      <AnimatedSection>
+        <section className="px-5 md:px-8 py-16 max-w-container-max mx-auto">
+          <div className="glass-card p-8 md:p-12">
+            <span className="font-label-caps text-label-caps text-secondary dark:text-secondary-fixed-dim tracking-widest">TECHNICAL SKILLS</span>
+            <h2 className="font-headline-md text-headline-md text-primary dark:text-primary-fixed mt-2 mb-8">Engineering Arsenal</h2>
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-col sm:flex-row gap-2">
+                <span className="font-code-sm text-[13px] text-secondary dark:text-secondary-fixed-dim font-semibold min-w-[200px]">Programming Languages:</span>
+                <span className="font-body-md text-[14px] text-on-surface-variant dark:text-[#9a9d9e]">Java, Python, C, C++, C#, TypeScript, PHP, Shell Scripting</span>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-2">
+                <span className="font-code-sm text-[13px] text-secondary dark:text-secondary-fixed-dim font-semibold min-w-[200px]">Frontend & Web:</span>
+                <span className="font-body-md text-[14px] text-on-surface-variant dark:text-[#9a9d9e]">React Native, Next.js, React.js, HTML5, CSS3, JavaScript, Bootstrap, jQuery, REST APIs</span>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-2">
+                <span className="font-code-sm text-[13px] text-secondary dark:text-secondary-fixed-dim font-semibold min-w-[200px]">Backend & Frameworks:</span>
+                <span className="font-body-md text-[14px] text-on-surface-variant dark:text-[#9a9d9e]">Spring Boot, FastAPI, Microservices, RESTful APIs, Hibernate/JPA, JDBC, Spring Security, JWT</span>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-2">
+                <span className="font-code-sm text-[13px] text-secondary dark:text-secondary-fixed-dim font-semibold min-w-[200px]">Databases & DevOps:</span>
+                <span className="font-body-md text-[14px] text-on-surface-variant dark:text-[#9a9d9e]">PostgreSQL, MySQL, Git, GitHub, Maven, Docker, Kubernetes, CI/CD, Postman</span>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-2">
+                <span className="font-code-sm text-[13px] text-secondary dark:text-secondary-fixed-dim font-semibold min-w-[200px]">Methodologies & Tools:</span>
+                <span className="font-body-md text-[14px] text-on-surface-variant dark:text-[#9a9d9e]">Agile, Scrum, Jira, UML, SDLC, OOP, Design Patterns, JUnit, Selenium Basics</span>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-2">
+                <span className="font-code-sm text-[13px] text-secondary dark:text-secondary-fixed-dim font-semibold min-w-[200px]">AI & Automation:</span>
+                <span className="font-body-md text-[14px] text-on-surface-variant dark:text-[#9a9d9e]">Prompt Engineering, LangChain, n8n, OpenAI API, Google Gemini, LLM Integration</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </AnimatedSection>
 
       {/* ═══════════════════════════════════════
           CODING PROFILES
@@ -446,7 +665,7 @@ async function initializeCluster() {
       </AnimatedSection>
 
       {/* ═══════════════════════════════════════
-          ENGINEERING ARSENAL — Tech Stack with Real Logos
+          TECH STACK GRID
           ═══════════════════════════════════════ */}
       <AnimatedSection>
         <section className="px-5 md:px-8 py-16 max-w-container-max mx-auto">
@@ -457,7 +676,7 @@ async function initializeCluster() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {techStack.map((group, gi) => (
+            {techStackData.map((group, gi) => (
               <AnimatedSection key={group.category} delay={gi * 150} animation="scale-in">
                 <div className="glass-card p-6 h-full">
                   <div className="flex items-center gap-3 mb-5">
@@ -490,6 +709,68 @@ async function initializeCluster() {
                 </div>
               </AnimatedSection>
             ))}
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* ═══════════════════════════════════════
+          CERTIFICATIONS
+          ═══════════════════════════════════════ */}
+      <AnimatedSection>
+        <section className="px-5 md:px-8 py-16 max-w-container-max mx-auto">
+          <span className="font-label-caps text-label-caps text-secondary dark:text-secondary-fixed-dim tracking-widest">CERTIFICATIONS</span>
+          <h2 className="font-headline-md text-headline-md text-primary dark:text-primary-fixed mt-2 mb-8">Professional Credentials</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {certifications.map((cert, i) => (
+              <AnimatedSection key={i} delay={i * 80} animation="scale-in">
+                <div className="glass-card p-5 flex items-center gap-3">
+                  <span className="material-symbols-outlined text-[20px] text-secondary dark:text-secondary-fixed-dim flex-shrink-0">workspace_premium</span>
+                  <span className="font-body-md text-[14px] text-on-surface-variant dark:text-[#9a9d9e]">{cert}</span>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* ═══════════════════════════════════════
+          ACHIEVEMENTS
+          ═══════════════════════════════════════ */}
+      <AnimatedSection>
+        <section className="px-5 md:px-8 py-16 max-w-container-max mx-auto">
+          <span className="font-label-caps text-label-caps text-secondary dark:text-secondary-fixed-dim tracking-widest">ACHIEVEMENTS</span>
+          <h2 className="font-headline-md text-headline-md text-primary dark:text-primary-fixed mt-2 mb-8">Key Milestones</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {achievements.map((ach, i) => (
+              <AnimatedSection key={i} delay={i * 100} animation="scale-in">
+                <div className="glass-card p-5 flex items-start gap-3">
+                  <span className="material-symbols-outlined text-[20px] text-secondary dark:text-secondary-fixed-dim flex-shrink-0 mt-0.5">emoji_events</span>
+                  <span className="font-body-md text-[14px] text-on-surface-variant dark:text-[#9a9d9e] leading-relaxed">{ach}</span>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* ═══════════════════════════════════════
+          LEADERSHIP & EXTRACURRICULAR
+          ═══════════════════════════════════════ */}
+      <AnimatedSection>
+        <section className="px-5 md:px-8 py-16 max-w-container-max mx-auto">
+          <span className="font-label-caps text-label-caps text-secondary dark:text-secondary-fixed-dim tracking-widest">LEADERSHIP & EXTRACURRICULAR</span>
+          <h2 className="font-headline-md text-headline-md text-primary dark:text-primary-fixed mt-2 mb-8">Beyond Code</h2>
+          <div className="glass-card p-6 md:p-8">
+            <ul className="space-y-4">
+              {leadershipActivities.map((act, i) => (
+                <AnimatedSection key={i} delay={i * 80}>
+                  <li className="flex gap-3 text-[15px] leading-relaxed text-on-surface-variant dark:text-[#9a9d9e]">
+                    <span className="material-symbols-outlined text-[18px] text-secondary dark:text-secondary-fixed-dim flex-shrink-0 mt-0.5">arrow_right</span>
+                    <span>{act}</span>
+                  </li>
+                </AnimatedSection>
+              ))}
+            </ul>
           </div>
         </section>
       </AnimatedSection>
@@ -545,7 +826,7 @@ async function initializeCluster() {
       </AnimatedSection>
 
       {/* ═══════════════════════════════════════
-          CONTACT SECTION — Enhanced
+          CONTACT SECTION
           ═══════════════════════════════════════ */}
       <section id="contact" className="px-5 md:px-8 py-16 md:py-24 max-w-container-max mx-auto relative">
         <AnimatedSection>
@@ -554,9 +835,9 @@ async function initializeCluster() {
               <span className="w-2 h-2 rounded-full bg-secondary animate-pulse-glow"></span>
               <span className="font-label-caps text-[10px] tracking-[0.15em] text-secondary dark:text-secondary-fixed-dim">ACTIVELY LOOKING FOR OPPORTUNITIES</span>
             </div>
-            <h2 className="font-headline-md text-headline-md md:font-display-lg-mobile md:text-display-lg-mobile text-primary dark:text-primary-fixed mt-2">Let&apos;s Build Something Together</h2>
+            <h2 className="font-headline-md text-headline-md md:font-display-lg-mobile md:text-display-lg-mobile text-primary dark:text-primary-fixed mt-2">Let's Build Something Together</h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant dark:text-[#9a9d9e] mt-4 max-w-xl mx-auto">
-              Have a project in mind or want to collaborate? I&apos;d love to hear from you.
+              Have a project in mind or want to collaborate? I'd love to hear from you.
             </p>
           </div>
         </AnimatedSection>
