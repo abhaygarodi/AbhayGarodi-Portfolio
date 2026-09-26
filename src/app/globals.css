@@ -55,6 +55,56 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  html.custom-cursor-enabled,
+  html.custom-cursor-enabled * {
+    cursor: none !important;
+  }
+
+  .cursor-follower {
+    pointer-events: none;
+  }
+
+  .cursor-follower-dot,
+  .cursor-follower-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    pointer-events: none;
+    will-change: transform;
+  }
+
+  .cursor-follower-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #00e639;
+    box-shadow: 0 0 12px rgba(0, 230, 57, 0.65);
+  }
+
+  .cursor-follower-ring {
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(0, 230, 57, 0.65);
+    border-radius: 50%;
+    transition: width 180ms ease, height 180ms ease, background-color 180ms ease, border-color 180ms ease;
+  }
+
+  .cursor-follower-ring-active {
+    width: 48px;
+    height: 48px;
+    border-color: rgba(0, 230, 57, 0.9);
+    background: rgba(0, 230, 57, 0.08);
+  }
+
+  .cursor-follower-ring-pressed {
+    width: 27px;
+    height: 27px;
+    background: rgba(0, 230, 57, 0.18);
+  }
+}
+
 /* ══════════════════════════════════════════
    PREMIUM KEYFRAME ANIMATIONS
    ══════════════════════════════════════════ */

@@ -5,6 +5,7 @@ import TopNavBar from "@/components/TopNavBar";
 import SideNavBar from "@/components/SideNavBar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import CursorFollower from "@/components/CursorFollower";
 
 export const metadata: Metadata = {
   title: "Abhay Garodi — Software Developer | Java | Spring Boot | Python | FastAPI | React Native | Full Stack Developer",
@@ -71,6 +72,7 @@ export default function RootLayout({
             </main>
           </div>
           <ScrollToTop />
+          <CursorFollower />
         </ThemeProvider>
       </body>
     </html>
